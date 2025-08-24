@@ -1,0 +1,11 @@
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\bin\Debug\net9.0\AvidTravel.Domain.deps.json
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\bin\Debug\net9.0\AvidTravel.Domain.dll
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\bin\Debug\net9.0\AvidTravel.Domain.pdb
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.AssemblyInfoInputs.cache
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.AssemblyInfo.cs
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.dll
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\refint\AvidTravel.Domain.dll
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\AvidTravel.Domain.pdb
+C:\Users\nhh86\avidtravel\AvidTravel.Domain\obj\Debug\net9.0\ref\AvidTravel.Domain.dll
