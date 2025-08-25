@@ -10,15 +10,14 @@
         />
       }
     </div>
-    <button class="nav prev" (click)="onPreviousSlideClick()" aria-label="Previous slide">‹</button>
-    <button class="nav next" (click)="onNextSlideClick()" aria-label="Next slide">›</button>
+    <button class="nav prev" (click)="onPreviousSlideClick()">‹</button>
+    <button class="nav next" (click)="onNextSlideClick()">›</button>
     <div class="dots">
       @for (imageUrl of carouselImageUrls; let index = $index; track imageUrl) {
         <button
           class="dot"
           [class.active]="index === currentSlideIndex"
           (click)="onGoToSlideClick(index)"
-          aria-label="Go to slide {{ index + 1 }}"
         ></button>
       }
     </div>
