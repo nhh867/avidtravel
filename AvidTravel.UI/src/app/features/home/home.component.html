@@ -1,13 +1,38 @@
-<div class="container">
-    <div class="overlay">
-       
-
-    <p-multiselect [options]="destinations" [(ngModel)]="selectedDestination" optionLabel="name" placeholder="Select Destination(s)" class="w-full md:w-80" />
-
-
-
- <input type="date" class="search-box" />
-    <button class="search-btn">Find</button>
+<div class="home">
+  <div class="carousel">
+    <div class="slides">
+      @for (imageUrl of carouselImageUrls; let index = $index; track imageUrl) {
+        <img
+          class="slide"
+          [class.active]="index === currentSlideIndex"
+          [src]="imageUrl"
+          alt="Slide {{ index + 1 }}"
+        />
+      }
     </div>
+    <button class="nav prev" (click)="onPreviousSlideClick()" aria-label="Previous slide">‹</button>
+    <button class="nav next" (click)="onNextSlideClick()" aria-label="Next slide">›</button>
+    <div class="dots">
+      @for (imageUrl of carouselImageUrls; let index = $index; track imageUrl) {
+        <button
+          class="dot"
+          [class.active]="index === currentSlideIndex"
+          (click)="onGoToSlideClick(index)"
+          aria-label="Go to slide {{ index + 1 }}"
+        ></button>
+      }
+    </div>
+  </div>
 
+  <div class="search-panel">
+    <p-multiselect
+      [options]="destinations"
+      [(ngModel)]="selectedDestination"
+      optionLabel="name"
+      placeholder="Select Destination(s)"
+      class="w-full md:w-80"
+    />
+    <input type="date" class="search-box" />
+    <button class="search-btn">Find</button>
+  </div>
 </div>
