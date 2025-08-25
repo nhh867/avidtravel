@@ -1,39 +1,175 @@
-.container {
-  height: 100vh; /* full screen */
-  background-image: url('../../../assets/background.jpeg');
-  background-size: cover;   /* scale to cover entire area */
-  background-position: center; /* center the image */
-  background-repeat: no-repeat;
+/* Home Layout */
+.home {
   display: flex;
-  justify-content: center;  /* center horizontally */
-  align-items: center;      /* center vertically */
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.overlay {
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 420px;        /* Fixed height */
+  overflow: hidden;
+  background: #000;     /* Black bars if needed */
   display: flex;
-  gap: 10px;  padding: 15px 20px;
-  border-radius: 30px;
+  justify-content: center; /* Center image horizontally */
+  align-items: center;     /* Center image vertically */
+}
+
+.slides {
+  width: auto;
+  height: 100%;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* Carousel Navigation */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav.prev { 
+  left: 12px; 
+}
+
+.nav.next { 
+  right: 12px; 
+}
+
+/* Carousel Dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: rgba(255,255,255,0.95);
+}
+
+/* Search Panel Layout */
+.search-panel {
+  display: flex;
+  gap: 10px;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: center;
+  border-color: #000;
 
 }
 
-/* Search input */
+
+/* Search input (date input) */
 .search-box {
   padding: 10px 15px;
-  border: none;
+  border: 2px solid #ddd;
   outline: none;
   border-radius: 20px;
   width: 250px;
   font-size: 16px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.25);
+}
+
+.search-box:hover {
+  border-color: #bbb;
 }
 
 /* Search button */
 .search-btn {
   padding: 10px 20px;
-  border: none;
+  border: 2px solid #e63946;
   border-radius: 20px;
   background-color: #e63946;  /* your theme color */
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #d52936;
+  border-color: #d52936;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(230, 57, 70, 0.3);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+/* Optional: Filter container styling for better spacing */
+.search-multiselect .p-multiselect-filter-container {
+  padding: 8px 12px;
+}
+
+/* Optional: Dropdown panel styling to match theme */
+.search-multiselect .p-multiselect-panel {
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-panel {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .search-box,
+  .search-multiselect .p-multiselect {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+:host ::ng-deep .p-multiselect .p-multiselect-item.p-highlight {
+  background: #ef4444 !important; /* Red */
+  color: #fff !important;
 }
