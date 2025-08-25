@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { GalleriaModule } from 'primeng/galleria';
 import { ButtonModule } from 'primeng/button';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   standalone: true,
@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit{
   destinations: Destination[] = [];
 
   selectedDestination: string = '';
