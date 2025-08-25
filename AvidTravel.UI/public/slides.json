@@ -1,9 +1,16 @@
 [
-  "/background.jpeg", 
-  "/pic1.jpg",
-  "/pic2.jpg",
-  "/pic3.jpg",
-  "/pic4.jpg",
-  "/pic5.jpg",
-  "/pic6.jpg"
+
+  {
+    "itemImageSrc": "/background.jpeg",
+    "thumbnailImageSrc": "/background.jpeg",
+    "alt": "Background image",
+    "title": "Sample Slide 1"
+  },
+  {
+    "itemImageSrc": "/pic1.jpeg",
+    "thumbnailImageSrc": "/pic1.jpeg",
+    "alt": "Background image",
+    "title": "Sample Slide 2"
+  }
+
 ]

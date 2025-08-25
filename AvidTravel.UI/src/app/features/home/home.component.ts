@@ -5,11 +5,14 @@ import { Destination } from '../../core/models/destination.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { GalleriaModule } from 'primeng/galleria';
+import { ButtonModule } from 'primeng/button';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule, FormsModule, MultiSelectModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, MultiSelectModule, GalleriaModule, ButtonModule, HttpClientModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -18,11 +21,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   destinations: Destination[] = [];
 
   selectedDestination: string = '';
-  carouselImageUrls: string[] = [
-    '/background.jpeg'
-  ];
-  currentSlideIndex: number = 0;
-  private autoRotateIntervalId: any;
+
+  images: Array<{ itemImageSrc: string; thumbnailImageSrc: string; alt?: string; title?: string }> = [];
+  activeIndex: number = 0;
+  showThumbnails: boolean = true;
+  isAutoPlay: boolean = true;
+  fullscreen: boolean = false;
 
   constructor(private destinationService: DestinationService, private http: HttpClient) {}
 
@@ -30,51 +34,32 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.destinationService.getDestinations()
       .subscribe(data => this.destinations = data);
 
-    this.loadSlidesManifest();
-    this.startAutoRotate();
+
+    this.http.get<Array<{ itemImageSrc: string; thumbnailImageSrc: string; alt?: string; title?: string }>>('/slides.json')
+      .subscribe(data => this.images = data);
   }
 
-  ngOnDestroy(): void {
-    if (this.autoRotateIntervalId) {
-      clearInterval(this.autoRotateIntervalId);
-    }
+  galleriaClass(): string {
+    return this.fullscreen ? 'w-full h-full' : 'w-full';
   }
 
-  onNextSlideClick(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.carouselImageUrls.length;
+  slideButtonIcon(): string {
+    return this.isAutoPlay ? 'pi pi-pause' : 'pi pi-play';
   }
 
-  onPreviousSlideClick(): void {
-    this.currentSlideIndex = (this.currentSlideIndex - 1 + this.carouselImageUrls.length) % this.carouselImageUrls.length;
+  fullScreenIcon(): string {
+    return this.fullscreen ? 'pi pi-window-minimize' : 'pi pi-window-maximize';
   }
 
-  onGoToSlideClick(targetIndex: number): void {
-    if (targetIndex < 0 || targetIndex >= this.carouselImageUrls.length) {
-      return;
-    }
-    this.currentSlideIndex = targetIndex;
+  toggleAutoSlide(): void {
+    this.isAutoPlay = !this.isAutoPlay;
   }
 
-  private startAutoRotate(): void {
-    if (this.carouselImageUrls.length <= 1) {
-      return;
-    }
-    this.autoRotateIntervalId = setInterval(() => {
-      this.onNextSlideClick();
-    }, 5000);
+  toggleFullScreen(): void {
+    this.fullscreen = !this.fullscreen;
   }
 
-  private loadSlidesManifest(): void {
-    this.http.get<string[]>('/slides.json')
-      .subscribe({
-        next: (urls) => {
-          if (Array.isArray(urls) && urls.length > 0) {
-            this.carouselImageUrls = urls.filter(u => typeof u === 'string' && u.trim().length > 0);
-          }
-        },
-        error: () => {
-          // Fallback to default hardcoded image; no action needed
-        }
-      });
+  onThumbnailButtonClick(): void {
+    this.showThumbnails = !this.showThumbnails;
   }
 }
