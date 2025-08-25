@@ -1,13 +1,13 @@
 <div class="container">
-    <div class="overlay">
-       
+  <p-multiSelect 
+    [options]="destinations" 
+    [(ngModel)]="selectedDestination"
+    optionLabel="name"
+    placeholder="Select Destination(s)"
+    class="search-box"
+  ></p-multiSelect>
 
-    <p-multiselect [options]="destinations" [(ngModel)]="selectedDestination" optionLabel="name" placeholder="Select Destination(s)" class="w-full md:w-80" />
+  <input type="date" class="search-box" />
 
-
-
- <input type="date" class="search-box" />
-    <button class="search-btn">Find</button>
-    </div>
-
+  <button class="search-btn">Find</button>
 </div>

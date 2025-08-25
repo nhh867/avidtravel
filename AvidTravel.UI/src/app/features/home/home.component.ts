@@ -14,7 +14,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 })
 export class HomeComponent implements OnInit {
   destinations: Destination[] = [];
-  selectedDestination: string = '';
+  selectedDestination: Destination[] = [];
 
   constructor(private destinationService: DestinationService) {}
 
