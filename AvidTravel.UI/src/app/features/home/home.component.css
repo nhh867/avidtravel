@@ -87,6 +87,18 @@
   font-size: 16px;
 }
 
+:host ::ng-deep .search-box.p-multiselect {
+  width: 250px;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 0; /* reset, since internal label has padding */
+}
+
+:host ::ng-deep .search-box.p-multiselect .p-multiselect-label {
+  padding: 10px 15px;  /* match input padding */
+  border-radius: 20px;
+}
+
 /* Search button */
 .search-btn {
   padding: 10px 20px;

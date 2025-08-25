@@ -15,6 +15,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   destinations: Destination[] = [];
+
   selectedDestination: string = '';
   carouselImageUrls: string[] = [
     'assets/background.jpeg'
