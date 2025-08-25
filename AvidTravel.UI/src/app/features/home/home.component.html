@@ -22,17 +22,27 @@
       }
     </div>
   </div>
-
+ 
   <div class="search-panel">
     <p-multiselect
       [options]="destinations"
       [(ngModel)]="selectedDestination"
       optionLabel="name"
       placeholder="Select Destination(s)"
-      class="w-full md:w-80"
+      styleClass="search-multiselect"
+      [showClear]="true"
+      [maxSelectedLabels]="3"
+      selectedItemsLabel="{0} destinations selected"
     />
-    <input type="date" class="search-box" />
-    <button class="search-btn">Find</button>
+    <input 
+      type="date" 
+      class="search-box"
+    />
+    <button 
+      class="search-btn"
+
+    >
+      Find
+    </button>
   </div>
 </div>
-

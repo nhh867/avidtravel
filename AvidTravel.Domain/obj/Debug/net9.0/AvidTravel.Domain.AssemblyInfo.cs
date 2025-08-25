@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvidTravel.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+557024b958f2cf4de56347f9d6e05abfca10be9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffcaa85656266db251aa446b05324efa66422cdb")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvidTravel.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvidTravel.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

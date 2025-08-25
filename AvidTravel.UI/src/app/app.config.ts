@@ -3,6 +3,8 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { providePrimeNG } from 'primeng/config';
+import { RosePreset } from '../rose-preset'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,5 +13,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAnimations(),
+    providePrimeNG({
+      theme: {
+        preset: RosePreset
+      }
+    })
   ]
 };

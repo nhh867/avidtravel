@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DestinationService } from '../../core/services/destination.services';
 import { Destination } from '../../core/models/destination.model';
@@ -12,6 +12,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
   imports: [CommonModule, FormsModule, MultiSelectModule, HttpClientModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit, OnDestroy {
   destinations: Destination[] = [];
