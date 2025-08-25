@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   selectedDestination: string = '';
   carouselImageUrls: string[] = [
-    'assets/background.jpeg'
+    '/background.jpeg'
   ];
   currentSlideIndex: number = 0;
   private autoRotateIntervalId: any;
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadSlidesManifest(): void {
-    this.http.get<string[]>('assets/slides.json')
+    this.http.get<string[]>('/slides.json')
       .subscribe({
         next: (urls) => {
           if (Array.isArray(urls) && urls.length > 0) {
