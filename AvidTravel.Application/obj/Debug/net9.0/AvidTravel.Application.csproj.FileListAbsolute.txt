@@ -13,3 +13,4 @@ C:\Users\nhh86\avidtravel\AvidTravel.Application\obj\Debug\net9.0\AvidTravel.App
 C:\Users\nhh86\avidtravel\AvidTravel.Application\obj\Debug\net9.0\refint\AvidTravel.Application.dll
 C:\Users\nhh86\avidtravel\AvidTravel.Application\obj\Debug\net9.0\AvidTravel.Application.pdb
 C:\Users\nhh86\avidtravel\AvidTravel.Application\obj\Debug\net9.0\ref\AvidTravel.Application.dll
+C:\Users\nhh86\avidtravel\AvidTravel.Application\obj\Debug\net9.0\AvidTravel.Application.sourcelink.json

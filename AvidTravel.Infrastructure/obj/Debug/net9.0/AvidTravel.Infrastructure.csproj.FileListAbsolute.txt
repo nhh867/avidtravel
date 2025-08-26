@@ -15,3 +15,4 @@ C:\Users\nhh86\avidtravel\AvidTravel.Infrastructure\obj\Debug\net9.0\AvidTravel.
 C:\Users\nhh86\avidtravel\AvidTravel.Infrastructure\obj\Debug\net9.0\refint\AvidTravel.Infrastructure.dll
 C:\Users\nhh86\avidtravel\AvidTravel.Infrastructure\obj\Debug\net9.0\AvidTravel.Infrastructure.pdb
 C:\Users\nhh86\avidtravel\AvidTravel.Infrastructure\obj\Debug\net9.0\ref\AvidTravel.Infrastructure.dll
+C:\Users\nhh86\avidtravel\AvidTravel.Infrastructure\obj\Debug\net9.0\AvidTravel.Infrastructure.sourcelink.json
