@@ -12,7 +12,7 @@ namespace AvidTravel.Domain.Models
         public int Sequence { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public float Cost { get; set; }
+        public Decimal Cost { get; set; }
   
     }
 }
