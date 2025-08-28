@@ -8,6 +8,8 @@ namespace AvidTravel.Infrastructure.Data
         public TravelContext(DbContextOptions<TravelContext> options) : base(options) { }
 
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Trip> Trips { get; set; }
+        public DbSet<TripDestination> TripDestinations { get; set; }
 
 
     }

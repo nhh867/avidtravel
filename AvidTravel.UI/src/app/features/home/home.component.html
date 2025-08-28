@@ -1,6 +1,7 @@
-
+<div class="search-container">
 <p-galleria #galleria 
     [value]="images" 
+    
     [(activeIndex)]="activeIndex" 
     [numVisible]="1" 
     [autoPlay]="true"
@@ -22,7 +23,7 @@
 </p-galleria>
     
 
-
+ <div class="search-controls">
     <p-multiselect
       [options]="destinations"
       [(ngModel)]="selectedDestination"
@@ -34,12 +35,15 @@
       selectedItemsLabel="{0} destinations selected"
     />
     <input 
-      type="date" 
+      type="month" 
+      [(ngModel)]="startDate"
       class="search-box"
     />
     <button 
+      (click)="onFind()"
       class="search-btn"
 
     >
       Find
     </button>
+  </div>

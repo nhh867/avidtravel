@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvidTravel.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffcaa85656266db251aa446b05324efa66422cdb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+760caab13aa322a214c7a7007e8f3f4f829b8516")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvidTravel.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvidTravel.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

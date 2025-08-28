@@ -55,7 +55,7 @@
     width: 100%;
     min-height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: ;
     align-items: center;
     padding: 1rem;
     box-sizing: inherit;
@@ -92,6 +92,7 @@
 .header-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0.5rem 1.5rem;
   box-sizing: border-box;
@@ -105,23 +106,13 @@
   letter-spacing: 0.05em;
 }
 
-.pill-group {
+.pill-group {margin-left: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 1.25rem;
-  flex: 1;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-left: 2.5rem;
-  font-size: 1rem;
-  color: var(--gray-900, #222);
-}
+
 
 .contact-phone {
   font-weight: 500;
@@ -141,16 +132,7 @@
   letter-spacing: 0.05em;
 }
 
-.pill-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  flex: 1;
-}
-
-  .pill {
+ .pill {
     display: flex;
     align-items: center;
     --pill-accent: var(--bright-blue);

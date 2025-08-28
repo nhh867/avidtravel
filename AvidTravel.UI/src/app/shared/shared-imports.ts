@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 export const SHARED_IMPORTS = [
@@ -10,5 +11,6 @@ export const SHARED_IMPORTS = [
   FormsModule,
   RouterModule,
   MultiSelectModule,
-  HeaderComponent  
+  HeaderComponent, 
+  FooterComponent
 ];

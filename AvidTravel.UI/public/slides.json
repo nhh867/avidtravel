@@ -9,6 +9,26 @@
     "itemImageSrc": "/pic1.jpg",
     "thumbnailImageSrc": "/pic1.jpg",
     "title": "Afrika"
+  },
+  {
+    "itemImageSrc": "/pic2.jpg",
+    "thumbnailImageSrc": "/pic2.jpg",
+    "title": "Afrika"
+  },
+  {
+    "itemImageSrc": "/pic3.jpg",
+    "thumbnailImageSrc": "/pic3.jpg",
+    "title": "Afrika"
+  },
+  {
+    "itemImageSrc": "/pic4.jpg",
+    "thumbnailImageSrc": "/pic4.jpg",
+    "title": "Afrika"
+  },
+  {
+    "itemImageSrc": "/pic5.jpg",
+    "thumbnailImageSrc": "/pic5.jpg",
+    "title": "Afrika"
   }
 
 ]

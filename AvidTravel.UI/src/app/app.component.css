@@ -1,9 +1,23 @@
+/* styles.css or global.scss */
+html, body {
+  height: 100%;          /* full height for flex to work */
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;     /* ensure viewport height */
+}
+
+.main {
+  flex: 1;               /* take remaining space */
+}
 
 
   .social-links {
     display: flex;
-    align-items: center;
-    gap: 0.73rem;
+    align-items: center;    gap: 0.73rem;
     margin-top: 1.5rem;
   }
 

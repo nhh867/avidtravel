@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { GalleriaModule } from 'primeng/galleria';
 import { ButtonModule } from 'primeng/button';
+import { TripSearchRequest } from '../../core/models/trip-search-request.model';
+import { TripService } from '../../core/services/trip.services';
 
 
 @Component({
@@ -19,8 +21,10 @@ import { ButtonModule } from 'primeng/button';
 })
 export class HomeComponent implements OnInit{
   destinations: Destination[] = [];
+  trips: TripSearchRequest = new TripSearchRequest();
 
-  selectedDestination: string = '';
+  selectedDestination: Destination[] = [];
+  startDate: string = '';
 
   images: Array<{ itemImageSrc: string; thumbnailImageSrc: string; alt?: string; title?: string }> = [];
   activeIndex: number = 0;
@@ -28,7 +32,7 @@ export class HomeComponent implements OnInit{
   isAutoPlay: boolean = true;
   fullscreen: boolean = false;
 
-  constructor(private destinationService: DestinationService, private http: HttpClient) {}
+  constructor(private destinationService: DestinationService, private tripService: TripService, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.destinationService.getDestinations()
@@ -43,23 +47,17 @@ export class HomeComponent implements OnInit{
     return this.fullscreen ? 'w-full h-full' : 'w-full';
   }
 
-  slideButtonIcon(): string {
-    return this.isAutoPlay ? 'pi pi-pause' : 'pi pi-play';
-  }
+  onFind(): void {
 
-  fullScreenIcon(): string {
-    return this.fullscreen ? 'pi pi-window-minimize' : 'pi pi-window-maximize';
-  }
+    if (this.selectedDestination) {  
+      this.trips.destinations = this.selectedDestination;
+      this.trips.startdate = this.startDate;
+      console.log('Trip search object:', this.trips);
 
-  toggleAutoSlide(): void {
-    this.isAutoPlay = !this.isAutoPlay;
-  }
-
-  toggleFullScreen(): void {
-    this.fullscreen = !this.fullscreen;
-  }
-
-  onThumbnailButtonClick(): void {
-    this.showThumbnails = !this.showThumbnails;
+      this.tripService.searchTrips(this.trips)
+        .subscribe(results => {
+          console.log('Search results:', results);
+        });
+    }
   }
 }
