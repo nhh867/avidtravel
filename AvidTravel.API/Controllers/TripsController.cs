@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AvidTravel.Infrastructure.Data;
 using AvidTravel.Domain.Models;
+using AvidTravel.Application.DTOs;
 
 namespace YourApp.Controllers
 {
@@ -17,7 +18,7 @@ namespace YourApp.Controllers
         }
 
         [HttpPost("search")]
-        public async Task<IActionResult> SearchTrips([FromBody] TripSearchRequest request)
+        public async Task<IActionResult> SearchTrips([FromBody] TripSearchRequestDTO request)
         {
              var query = _context.TripDestinations
                          .Include(td => td.Trips)
@@ -36,8 +37,8 @@ namespace YourApp.Controllers
         // ✅ Filter by multiple destination IDs (if provided)
         if (request.Destinations != null && request.Destinations.Any())
         {
-           query = query.Where(td => request.Destinations.Contains(td.Destinations));
-        }
+           query = query.Where(td => request.Destinations.Contains(td.DestinationId));
+       }
  
         // ✅ Select only what you need
         var results = await query

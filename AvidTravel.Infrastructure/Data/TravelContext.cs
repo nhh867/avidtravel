@@ -12,5 +12,8 @@ namespace AvidTravel.Infrastructure.Data
         public DbSet<TripDestination> TripDestinations { get; set; }
 
 
+
+
+
     }
 }
