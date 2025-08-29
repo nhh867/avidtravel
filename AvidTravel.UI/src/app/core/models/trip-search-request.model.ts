@@ -1,12 +1,13 @@
+import { NumberSymbol } from '@angular/common';
 import { Destination } from './destination.model'
 
 export class TripSearchRequest {
 
-  destinations: Destination[] = [];
+  destinationsId: number[] = [];
   startdate: string = '';
 
-  constructor(destinations?: Destination[], startdate?: string) {
-    destinations = destinations;
+  constructor(destinationsId?: number[], startdate?: string) {
+    destinationsId = destinationsId;
     startdate = startdate;
   }
 

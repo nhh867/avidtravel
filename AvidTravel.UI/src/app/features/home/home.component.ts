@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
   destinations: Destination[] = [];
   trips: TripSearchRequest = new TripSearchRequest();
 
-  selectedDestination: Destination[] = [];
+  selectedDestination: number[] = [];
   startDate: string = '';
 
   images: Array<{ itemImageSrc: string; thumbnailImageSrc: string; alt?: string; title?: string }> = [];
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit{
   onFind(): void {
 
     if (this.selectedDestination) {  
-      this.trips.destinations = this.selectedDestination;
+      this.trips.destinationsId = this.selectedDestination;
       this.trips.startdate = this.startDate;
       console.log('Trip search object:', this.trips);
 
