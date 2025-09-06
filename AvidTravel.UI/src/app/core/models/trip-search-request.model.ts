@@ -3,11 +3,11 @@ import { Destination } from './destination.model'
 
 export class TripSearchRequest {
 
-  destinationsId: number[] = [];
+  destinations: number[] = [];
   startdate: string = '';
 
-  constructor(destinationsId?: number[], startdate?: string) {
-    destinationsId = destinationsId;
+  constructor(destinations?: number[], startdate?: string) {
+    destinations= destinations;
     startdate = startdate;
   }
 
