@@ -1,8 +1,10 @@
-.contact-info {
+
+
+ .contact-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-left: 2.5rem;
   font-size: 1rem;
-  color: var(--gray-900, #222);
+  color: white; 
 }

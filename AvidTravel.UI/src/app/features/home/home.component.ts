@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit{
     if (this.selectedDestination) {  
       this.trips.destinations = this.selectedDestination;
       this.trips.startdate = this.startDate;
-      console.log('Trip search object:', this.trips);
 
       this.tripService.searchTrips(this.trips)
         .subscribe(results => {

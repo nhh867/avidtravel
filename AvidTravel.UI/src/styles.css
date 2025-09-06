@@ -1,2 +1,23 @@
 @import "primeicons/primeicons.css";
 
+html, body, app-root {
+  height: 100%;       /* make them full height */
+  margin: 0;          /* remove default spacing */
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;            /* takes all remaining space */
+}
+
+
+app-footer {
+  background-color: oklch(60% 0.25 29);
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
