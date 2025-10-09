@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DataViewModule } from 'primeng/dataview';
+
 
 
 export const SHARED_IMPORTS = [
@@ -12,5 +14,6 @@ export const SHARED_IMPORTS = [
   RouterModule,
   MultiSelectModule,
   HeaderComponent, 
-  FooterComponent
+  FooterComponent,
+  DataViewModule
 ];

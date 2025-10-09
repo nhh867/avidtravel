@@ -1,0 +1,20 @@
+<p-dataview #dv *ngIf="!isLoading" [value]="trips" [paginator]="true" [rows]="6" layout="list" >
+  <!-- Each trip item -->
+
+  <ng-template pTemplate="list" let-trip>
+
+        {{ trip.tripName }} <br>
+        {{ trip.tripDescription }} <br>
+        <div class="text-sm text-secondary">
+          <strong>Destination:</strong> {{ trip.destinationName }}
+        </div>
+
+  </ng-template>
+
+  <!-- Empty state -->
+  <ng-template pTemplate="empty">
+    <div class="p-text-center p-p-5 text-secondary">
+      No trips found
+    </div>
+  </ng-template>
+</p-dataview>

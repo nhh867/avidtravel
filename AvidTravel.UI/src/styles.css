@@ -13,7 +13,7 @@ html, body, app-root {
 
 
 app-footer {
-  background-color: oklch(60% 0.25 29);
+  background-color: #e63946;
   color: #fff;
   padding: 1rem;
   display: flex;

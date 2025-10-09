@@ -9,6 +9,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ButtonModule } from 'primeng/button';
 import { TripSearchRequest } from '../../core/models/trip-search-request.model';
 import { TripService } from '../../core/services/trip.services';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,9 +22,8 @@ import { TripService } from '../../core/services/trip.services';
 })
 export class HomeComponent implements OnInit{
   destinations: Destination[] = [];
-  trips: TripSearchRequest = new TripSearchRequest();
 
-  selectedDestination: number[] = [];
+  selectedDestination: string[] = [];
   startDate: string = '';
 
   images: Array<{ itemImageSrc: string; thumbnailImageSrc: string; alt?: string; title?: string }> = [];
@@ -31,8 +31,9 @@ export class HomeComponent implements OnInit{
   showThumbnails: boolean = true;
   isAutoPlay: boolean = true;
   fullscreen: boolean = false;
+  keyword: string = '';
 
-  constructor(private destinationService: DestinationService, private tripService: TripService, private http: HttpClient) {}
+  constructor(private destinationService: DestinationService, private tripService: TripService, private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.destinationService.getDestinations()
@@ -50,13 +51,8 @@ export class HomeComponent implements OnInit{
   onFind(): void {
 
     if (this.selectedDestination) {  
-      this.trips.destinations = this.selectedDestination;
-      this.trips.startdate = this.startDate;
-
-      this.tripService.searchTrips(this.trips)
-        .subscribe(results => {
-          console.log('Search results:', results);
-        });
+      this.router.navigate(['/search'], { queryParams: { keywords: this.selectedDestination.map(x => x.trim()), date: this.startDate } });
+     
     }
   }
 }

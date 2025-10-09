@@ -1,6 +1,6 @@
 export interface Trip {
-    Id: number; 
-    Name: string;
-    Description: string;
+    tripId: number; 
+    tripName: string;
+    tripDescription: string;
     total_cost: number;
 }
