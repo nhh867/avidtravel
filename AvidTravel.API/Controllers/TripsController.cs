@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AvidTravel.Infrastructure.Data;
 using AvidTravel.Domain.Models;
 using AvidTravel.Application.DTOs;
+using AvidTravel.Application.DTOs;
 
 namespace YourApp.Controllers
 {
@@ -26,8 +27,23 @@ namespace YourApp.Controllers
                         .AsQueryable();
 
             // ✅ Filter by month/year (if provided)
-            if (!string.IsNullOrWhiteSpace(request.StartDate) &&
-            DateTime.TryParseExact(request.StartDate + "-01", "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out var start))
+       
+        if (!string.IsNullOrWhiteSpace(request.StartDate) &&
+        DateTime.TryParseExact(request.StartDate + "-01", "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out var start))
+        {
+           var end = start.AddMonths(1);
+           query = query.Where(td => td.StartDate >= start && td.StartDate < end);
+     }
+
+        // ✅ Filter by multiple destination IDs (if provided)
+        if (request.Destinations != null && request.Destinations.Any())
+        {
+           query = query.Where(td => request.Destinations.Contains(td.DestinationId));
+       }
+ 
+        // ✅ Select only what you need
+        var results = await query
+            .Select(td => new
             {
                var end = start.AddMonths(1);
                query = query.Where(td => td.StartDate >= start && td.StartDate < end);
